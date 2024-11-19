@@ -1,0 +1,17 @@
+
+
+# 0 - sirka 1 - delka 2 - pocet radku
+PARAMETRY_TABULKY = (10, 200, 300)
+
+
+PARAMETRY_TABULKY_SIRKA = 10
+PARAMETRY_TABULKY_VYSKA = 200
+PARAMETRY_TABULKY_RADKU = (300,)
+
+
+if PARAMETRY_TABULKY_RADKU > 1000:
+    print("mas to moc dlouhty")
+
+
+
+

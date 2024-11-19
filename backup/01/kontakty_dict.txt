@@ -1,0 +1,4 @@
+jmeno,prijmeni,vek
+petr,Vlcek,50
+Pavel,vopiCka,40
+Vera,"Ziva, Novotna",25

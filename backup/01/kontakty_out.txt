@@ -1,0 +1,3 @@
+jmeno,prijmeni,vek
+Pepa,Nos,50
+Alena,Ziva,25

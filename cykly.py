@@ -1,34 +1,38 @@
-slovo = "abcdefghij"
-slovnik = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
-mnozina = set("abcdefghijabcdefghijabcdefghij")
-pocitadlo = 10
+"""
+Cykly
 
-# vezmi seznam a vytiskni obracene poradi
-# 1. print(seznam[::-1])
-# for cislo in seznam[::-1]:
-#   print(cislo)
+for cyklus - iteraci pres sekvenci prvku
 
-# 2. seznam.reverse()
-# for cislo in seznam[::-1]:
-#   print(cislo)
+while cyklus - dokud je splnna podminka
+
+"""
+from time import sleep
+
+seznam = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+seznam = "AHOJ"
+
+"""
+for cislo in seznam:
+    print(cislo)
+
+for index, prvek in enumerate(seznam):
+    print(index, prvek)
 
 
-# vezmi seznam a vytvor z nej novy pomoci cyklu s obracenym poradim prvku
+for x in range(1, 11, 2):   # range(zacatek vcetne, konec vyjma, krok)
+    print(x)
+"""
 
-seznam = [1, 2, 3, 4, 5]
-listy = [[1, 2], [3, 4], [5, 6]]
+# cyklus while
+pocitadlo = 0
+while pocitadlo < 5:
+    if pocitadlo == 8:
+        break
+    print(f"Iterace cyklu: {pocitadlo}")
+    sleep(1)
+    pocitadlo += 1
+else:
+    print("Cyklus skoncil v poradku")
 
 
-
-# [[1,2,3],
-#  [4,5,6],
-#  [7,8,9]]
-# vysledek = [[1,2,3],[4,5,6],[7,8,9]]
-cisla = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-suda = []
-# suda obsahovala suda cisla z seznamu cisla
-for prvek in cisla:
-    if prvek % 2 == 0:
-        suda.append(prvek)
-print(suda)
 

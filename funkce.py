@@ -1,123 +1,104 @@
+"""
+Funkce
+
+def nazev_funkce(parametry):
+....kod ktery se provede
+    return hodnotu co vracim
+
+  None - nic nevracim
+"""
+PARAMETR = "------"
 
 
-# predam parameter ten se vytickne na obrazovku
-def nazev_funkce(text_k_tisku="nejaky text"):
+def druha_mocnina(cislo: int) -> int:
+    """Druha mocnina
+
+    :param cislo: zadej cioslo ktere se umocnit na 2
+    :return: druha mocnina cisla
     """
-    Testovaci funkce na demonstraci vytvareni funkce v Pythonu
-
-    :param text_k_tisku:  Tet ktery se ma vyticknout na obrazovku
-
-    :return:  nevraci nic
-    """
-    # vlastni kod funkce
-    # kus programu ktery vykonam
-    print(text_k_tisku)
+    return cislo ** 2
 
 
-def dva_parametry(a, b=2, c=3):
-    print(a)
-    print(b)
-    print(c)
+def tisk_visitky():
+    print("Petr, Vlcek, lektor")
+    print(PARAMETR)
 
 
-def pozdrav(osoba, text_pozdravu="Dobry den: "):
-    print(f"{text_pozdravu} {osoba}")
+def vizitka(jmeno, prijmeni="Novak", vek=25):
+    print(f"Jmeno: {jmeno}\nPrijmeni: {prijmeni}\nVek: {vek}")  # print(jmeno, prijmeni, vek)
 
 
-def mocnina(cislo, mocnitel=2):
-    return cislo ** mocnitel
+# vizitka("Petr", vek=25)
 
 
-def druha_mocnina(cislo):
-    return mocnina(cislo)
+# sberne paramtery
+# *args - promenny pocet pozicnich parametru
+# **kwargs - promenny pocet klicovych parametru
+
+def pozicni_parametry(*args):
+    print(args)
+    print(args[0])
 
 
-def treti_mocnina(cislo):
-    return mocnina(cislo, 3)
+def secti_vsechna_cisla(*args):
+    soucet = 0
+    for cislo in args:
+        soucet += cislo
+    return soucet
 
 
-cisla = [-1, 2, 3, 100]
+def klicove_parametry(**kwargs):
+    print(kwargs)
 
-def minimum1(seznam_cisel):
-    min = seznam_cisel[0]
-    for cislo in seznam_cisel[1:]:
-        if cislo < min:
-            min = cislo
-    return min
-
-
-def min_max1(seznam_cisel):
-    return min(seznam_cisel), max(seznam_cisel)
-
-
-def min_max(seznam_cisel):
-    minimum = seznam_cisel[0]
-    maximum = seznam_cisel[0]
-    for cislo in seznam_cisel:
-        if cislo < minimum:
-            min = cislo
-
-    for cislo in seznam_cisel:
-        if cislo < maximum:
-            min = cislo
-
-    return minimum, maximum
-
-osoba = {
-    'jmeno': "Franta",
-    'prijmeni': "Vopicka",
-    'vek': 55,
-    'vaha': 100,
-    'stav': "Zenaty"
+parametry = {
+    "jmeno": "Tomas",
+    "prijmeni": "Hrdina",
+    "vek": 25
 }
 
 
-def tisk_detailu_osoba(osoba):
-    for key, value in osoba.items():
-        print(f"{key.capitalize()}: {value}")
+def prevod_stupnu_fahrenheit(*args):
+    """Prevadime jeden nebo vice hodnot C na F
+
+    20 - 50 C   -  normqalni teplota N
+    <20  -  nizka teplota  L
+    >50  -  vysoka teplota H
+
+    [(20-50,68,'N'), (>50, 212, 'H'), (<20, 32, 'L)]
+
+    'N' normalni hodnota,  'L' nizka, 'H' vysoka
+    """
+    vysledky = []
+
+    def c_2_f(c):
+        """Srtupne na F (c * 9/5) + 32"""
+        return (c * 9 / 5) + 32
+
+    for cislo in args:
+        prevod = [cislo, c_2_f(cislo)]
+        if cislo < 20:
+            prevod += ["L"]
+        elif cislo > 50:
+            prevod += ["H"]
+        else:
+            prevod += ["N"]
+        vysledky.append(tuple(prevod))
+    return vysledky
 
 
-def vypocet_nad_seznamem(seznam_cisel, funkce):
-    for cislo in seznam_cisel:
-        print(f"{cislo} - {funkce(cislo)}")
+prevod_cidla = prevod_stupnu_fahrenheit
+
+print(prevod_cidla(0, 50, 200))
 
 
-def nadrazene_telo_funkce(seznam_cisel):
+def mocnina(cislo):
+    return cislo ** 2
 
-    def mocnina2(cislo):
-        return cislo ** 2
-
-    for cislo in seznam_cisel:
-        print(f"cislo: {cislo}, druha mocnina: {mocnina2(cislo)}")
+def krat2(cislo):
+    return cislo * 2
 
 
-vek_osob = [25, 30, 43, 50, 60]
-
-def prumerny_vek(veky):
-    soucet = 0
-    for cislo in veky:
-        soucet += cislo
-    return soucet / len(veky)
-
-
-slova = ["pes", "kočka", "sloni kel", "hroch"]
-
-
-def nejdelsi_slovo(seznam_predanych_slov):
-    nejdelsi = seznam_predanych_slov[0]
-    for slovo in seznam_predanych_slov:
-        if len(slovo) > len(nejdelsi):
-            nejdelsi = slovo
-    return nejdelsi
-
-
-print(nejdelsi_slovo(slova))
-
-a = [1,2,3,4,5,6,7,8,9,10]
-
-y = [x for x in a if x % 2 == 0]
-
-print(y)
-
+def vypocet(funkce, cislo):
+    return funkce(cislo)
 
 

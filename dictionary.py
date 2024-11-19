@@ -1,31 +1,30 @@
-a = {}
-b = {'a': 1, 'b': 2, 'c': 3}
-c = {'e': 5, 'f': 6, 'a': 10}
-print(b)
+"""
+Dictionary - slovnik
+"""
+import copy
 
-#print(b.keys())
-#print(b.values())
-#print(b.items())
+slovnik = {}   # nebo dict(1,2,3)
 
-d1 = {'jmeno': 'Franta', 'vek': 30}
-d2 = {'ulice': 'Karlova 52', 'mesto': 'Mseno'}
-
-osoba = {
-    'jmeno': {'krestni': 'Franta', 'prijmeni': 'Vopicka'},
-    'adresa': {'ulice': 'Karlova 52', 'mesto': 'Mseno'},
-    'vek': 50,
-    'miry': [180, 80],
-    101: 'moje id',
-    # ...
+# dict -- json
+adresa = {
+    "ulice": "Husova",
+    "cislo": 123,
+    "mesto": "Praha",
 }
+osoba = {
+    "jmeno": "Tomas",
+    "prijmeni": "Hrdina",
+    "vek": 25,
+    "adresa": adresa,
+    "miry": [180, 90],
+}
+print(osoba)
 
-print(a)
-a['jmeno'] = 'Pepa'
-a.setdefault('jmeno', 'John Doe')
-print(a)
 
-x = [1, 2, 3, 4, 5]
-x = ['jmeno', 40, ...]
+x = dict(a=1, b=2, c=3, jmeno="Tomas", vek=25)
 
-x = ['jemno', 40]
+a = [1, 2]
+b = ["A", "B", "C"]
+
+print(dict(zip(a, b)))
 
